@@ -11,7 +11,9 @@ def input_students
     height = gets.chomp
     puts "Enter favourite hobby"
     hobby = gets.chomp
-    students << {name: name, country: country, height: height, hobby: hobby, cohort: :november}
+    puts "Enter cohort"
+    cohort = gets.chomp.to_sym
+    students << {name: name, country: country, height: height, hobby: hobby, cohort: cohort}
     puts "Do you want to enter another student?(y/n)"
     answer = gets.chomp
     if answer != "y"
@@ -22,8 +24,8 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(50)
+  puts "-------------".center(50)
 end
 
 def print(students)
@@ -36,7 +38,7 @@ def print(students)
 end
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students".center(50)
 end
 
 #nothing happens until we call the methods
